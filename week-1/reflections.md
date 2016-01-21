@@ -25,7 +25,7 @@ Shell is a term for the user interface with an operating system.  The shell is t
   You would fork a repo as opposed to creating one if you would like to work on the code within the repo that you are forking.  If you created one, it would just be blank.  Forking allows you to copy the code from the master repo, and work on it separately.
   On my command line, I have a few more symbols now on every line after installing Git that I am unsure of what they are.  Other than that, I did not run into any issues.  I learned of the novel and extremely awesome way of keeping master code safe while giving developers the room to be creative and work on code without the looming possibility of a bug disaster wiping out your work.
 
-  #### 1.5 Tracking Changes Reflection
+#### 1.5 Tracking Changes Reflection
 How does tracking and adding changes make developers' lives easier?
 What is a commit?
 What are the best practices for commit messages?
