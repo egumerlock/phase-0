@@ -1,2 +1,2 @@
-![](/imgs/siteindex.jpg)
-![](/imgs/blogindex.jpg)
+![](week-2/imgs/siteindex.jpg)
+![](week-2/imgs/blogindex.jpg)
