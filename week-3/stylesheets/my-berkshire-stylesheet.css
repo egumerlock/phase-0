@@ -1,0 +1,76 @@
+body {
+  color: #000080;
+  background-color: #ffffff;
+}
+
+a {
+  color: #800080;
+}
+
+a:visited {
+  color: #ff0000;
+}
+
+
+#firstcolumn {
+  float: left;
+  line-height: 3.0;
+  margin-left: 5%;
+  position: relative;
+}
+
+#secondcolumn {
+  position: relative;
+  line-height: 3.0;
+  align: center;
+  margin-left: 50%;
+}
+
+#smalltext {
+  line-height: 1.0;
+  font-size: 10px;
+
+}
+
+.header {
+  text-align: center;
+  font-weight: bold;
+}
+
+#BH {
+  font-size: 40px;
+}
+
+#address {
+  font-size: 12px;
+  display: block;
+}
+
+#smaller {
+  font-size: 16px;
+}
+
+#geico {
+  text-align: center;
+  font-size: 10px;
+  display: block;
+}
+
+#bottom {
+  font-size: 13px;
+}
+
+#footer {
+  font-size: 10px;
+}
+
+/* What is important to know when linking an external file (like a stylesheet) to an HTML file?
+It is important to link the exact path, relative or absolute, to link your CSS to an HTML file.  If the path is wrong, you will have no linkage whatsoever.
+What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+We used display: block; with <span> in the HTML file to create line breaks without using line breaks in the HTML file.  Also, position: relative; was key in positioning the columns in the right fashion.  It took awhile to figure out how to make the site the way we wanted it to look, and I have to say CSS is a much harder thing to master, so it seems, than HTML.  A lot of it was trial and error, this being our first real CSS assignment.
+What CSS did you use to modify the element style (like size, color, etc.)
+color: # ; font-size: #; and background-color: #; were used many times, as well as font-weight: #;
+Did you modify the HTML to include classes or ids? If so, which did you choose and why? If you didn't, how would you know which one to add to your HTML?
+We used both classes and ids many times.  Classes were for broader subjects, such as the header, which contained other id elements, such as the address.  It was helpful to keep them different, so it was easier to mentally grasp what exactly we were modifying.  Also, ids within a class overrule the class CSS.
+When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+I think our site had cleaner code, and we also followed the better practice, since if we wanted to make a site that was in the exactly the same format as the first page, it would extremely easy to just link the same CSS file to it.  When creating larger projects (larger than 1 webpage), I think that using CSS is much cleaner, much more intuitive than using one HTML file.  However, for one page, I can see how one would want to perhaps just use an HTML.  Still the better practice is to be able to format much more content in a quicker, simpler way, which is CSS. */
