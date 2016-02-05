@@ -1,1 +1,9 @@
-![]
+![](https://github.com/egumerlock/phase-0/blob/master/week-2/imgs/exercise1.png)
+![](https://github.com/egumerlock/phase-0/blob/master/week-2/imgs/exercise2.png)
+![](https://github.com/egumerlock/phase-0/blob/master/week-2/imgs/exercise3.png)
+![](https://github.com/egumerlock/phase-0/blob/master/week-2/imgs/exercise4.png)
+![](https://github.com/egumerlock/phase-0/blob/master/week-2/imgs/exercise5.png)
+![](https://github.com/egumerlock/phase-0/blob/master/week-2/imgs/exercise6.png)
+![](https://github.com/egumerlock/phase-0/blob/master/week-2/imgs/exercise7.png)
+![](https://github.com/egumerlock/phase-0/blob/master/week-2/imgs/exercise8.png)
+![](https://github.com/egumerlock/phase-0/blob/master/week-2/imgs/exercise9.png)
