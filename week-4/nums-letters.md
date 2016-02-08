@@ -14,7 +14,9 @@ Float division is "normal" division in the sense that it willbe the exact divisi
 5256000
 
 [Exercise 4.2.1](https://github.com/egumerlock/phase-0/blob/master/week-4/defining-variables.rb)
+
 [Exercise 4.2.2](https://github.com/egumerlock/phase-0/blob/master/week-4/simple-string.rb)
+
 [Exercise 4.2.3](https://github.com/egumerlock/phase-0/blob/master/week-4/basic-math.rb)
 
 ####How does Ruby handle addition, subtraction, multiplication, and division of numbers?
