@@ -1,7 +1,9 @@
 # Solution Below
-new(old_string="Ruby is cool")
-
+old_string="Ruby is cool"
 old_string = "LOOC SI YBUR"
+new_string = old_string
+old_string = "Ruby is cool"
+
 
 
 
