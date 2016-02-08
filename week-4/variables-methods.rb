@@ -8,12 +8,13 @@ favnum = gets.chomp
 newnum = favnum.to_i + 1
 puts "Well, " + newnum.to_s + " is a much bigger, better number."
 
-[Exercise 4.3.1](https://github.com/egumerlock/phase-0/blob/master/week-4/address/my_solution.rb)
-
-[Exercise 4.3.2](https://github.com/egumerlock/phase-0/blob/master/week-4/math/my_solution.rb)
-
 #
 =begin
+
+Exercise 4.3.1: https://github.com/egumerlock/phase-0/blob/master/week-4/address/my_solution.rb
+
+Exercise 4.3.2: https://github.com/egumerlock/phase-0/blob/master/week-4/math/my_solution.rb
+
 
 How do you define a local variable?
   You define a local variable by setting it equal to whatever value you want it to have. Ex. `my_var = 5`
