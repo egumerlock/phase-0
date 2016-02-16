@@ -45,27 +45,24 @@ accountability_groups(names)
 # Refactored Solution
 names = ["Adam Pinsky", "Afaan Naqvi", "Alana Farkas", "Andrew Crowley", "Andrew Vathanakamsang", "Anna Lansfjord", "Blair White", "Brad Lindgren", "Brian Donahue", "Brittney Braxton", "Camila Crawford", "Charlie Lee", "Chunyu Ou", "Daniel Homer", "Daniel Shapiro", "David Kaiser", "David Ramirez", "Daniel Deutsch", "Emily Osowski", "Emmet Garber", "Eric Gumerlock", "Greg Toprak", "Hanna Taylor", "Dave Hostios", "Jack Baginski", "Jaclyn Feminella", "Jasmeet Chatrath", "Jason Allen", "Jon Norstrom", "jonathan nicolas", "Joseph Yoo", "Joshua Lugo", "Joshua Wu", "Julia Giraldi", "Kari Giberson", "Katherine Broner", "Kevin Fowle", "Kevin Niu", "Kevin Perkins", "Leo Kukhar", "Li-Lian Ku", "Erica Lloyd", "Marita Deery", "Michael Verthein", "Milorad Felbapov", "Brian Mosley", "Nick Russo", "Noah Schutte", "Oscar Delgadillo", "Ryan Dempsey", "Ryan Wilkins", "Sami Zhang", "Sean Norton", "Shyh Hwang", "Sydney Rossman-Reich", "Theo Paul", "Tomasz Sok", "Wesley El-Amin"]
 
-def accountability_groups(names)
-  names = names.shuffle
-  if names.size % 5 == 0
-    new_array = names.each_slice(5).to_a
-    puts "#{new_array} #{new_array.size}"
-  else
-    new_array = names.each_slice(4).to_a
-    if new_array.last.length > 2
-      puts "#{new_array} #{new_array.size}"
-    else
-      removal_index = -2
-      until new_array.last.length > 2
-      new_array.last.push(new_array[removal_index].pop)
-      removal_index -= 1
-      end
-      puts "#{new_array} #{new_array.size}"
-    end
+def accountability_groups(bob)
+  bob = bob.shuffle
+  new_array = bob.each_slice(5).to_a
+  removal_index = -2
+  until new_array.last.length > 2
+    new_array.last.push(new_array[removal_index].pop)
+    removal_index -= 1
   end
+  new_array
 end
 
-accountability_groups(names)
+accountability_groups(names).each_with_index do |sub_group, index|
+  puts "Group #{index + 1} is #{sub_group.join(', ')}"
+end
+
+# http://ruby-doc.org/core-2.3.0/Kernel.html#method-i-puts
+# http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-each_with_index
+
 
 # Assisted by Andrew Larson in Office Hours 2/16/2016
 
@@ -79,7 +76,7 @@ I think this was a good solution, I could have made it a little better if I real
 What data structure did you decide to store the accountability groups in and why?
 I decided to store them in subarrays within a big array.  I could have stored them in a Hash, but that was perhaps overcomplicating a little bit?  I think the array worked out for my purpose.
 What did you learn in the process of refactoring your initial solution? Did you learn any new Ruby methods?
-I didn't learn any new Ruby methods, but I clarified one, namely new_array[-2].pop which pops the last element of the second to last subarray, NOT the entire subarray, which I thought it was going to do in the outset.
-
+I learned .each_with_index which takes each element based on its index number and is able to apply a do method to it.
+I clarified new_array[-2].pop which pops the last element of the second to last subarray, NOT the entire subarray, which I thought it was going to do in the outset.
 
 =end
