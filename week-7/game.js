@@ -2,167 +2,275 @@
 
 // This is a solo challenge
 
-// Your mission description: Player encounters a troll and a bridge to cross.
-// Overall mission: Get passed the Troll by whatever means necessary
-// Goals: Encounter a troll and make your way across the bridge
-// Characters: Player, Troll
-// Objects: Player, Troll, Bridge
-// Functions: Persuade, Bribe, Fight, Sneak, Think, Look, Train, Intimidate
+// Your mission description: Player starts in a room and moves to fight different enemies
+// Overall mission: Fight enemies, level up
+// Goals: Fight enemies
+// Characters: Player, Troll, Dragon, Mouse
+// Objects: Player, Troll, Dragon, Mouse
+// Functions: look, fight, levelup, stats
 
 // Pseudocode
-// Declare a player object that will have properties that change depending on actions they take and items they find.
-// Add different functions that the player can take.
-// Declare a Troll object and give it properties that change
-// Check what items you player has.
-// If you have certain items, you can pass the troll in different ways.
-
+/* Create objects for troll dragon mouse and player with properties
+   Properties: armor, health, damage, armor, gold, exp
+   Create function fight which allows player to fight with other enemies
+   While one of them has health above 0, they keep hitting each other.
+   Create function look which allows you to see what is in the room
+   Picks up a helpful item
+   Create function stats to view your current stats
+   */
 // Initial Code
+// Run in Inspector on a website, no prompt in command line
+
+// var player = {
+//   health: 100,
+//   damage: 5,
+//   armor: 5,
+//   gold: 0,
+//   exp: 0,
+//   level: 1
+// };
+
+// var dragon = {
+//   health: 125,
+//   damage: 7,
+//   armor: 2,
+//   name: "Dragon",
+//   gold: 2000,
+//   exp: 100
+// };
+
+// var troll = {
+//   health: 25,
+//   damage: 10,
+//   armor: 3,
+//   name: "Troll",
+//   gold: 500,
+//   exp: 20
+// };
+
+// var mouse = {
+//   health: 2,
+//   damage: 1,
+//   armor: 0,
+//   name: "Mouse",
+//   gold: 2,
+//   exp: 2
+// }
+// while (player.health > 0){
+//   var answer = prompt("You have made your way into the depths of the dungeon.  Around the room there are remains of other warriors who have fallen before you.  In front of you there is a large door with a Dragon inscribed in bronze shaped like a door knocker.  To the left of you there is a smaller door from which you can hear gentle hums and grunts.  To the right there is a an opening that you could perhaps squeeze through.  What do you decide to do? right, left, forward, look")
+
+//   switch (answer) {
+
+
+//     case "forward":
+//     fight(player, dragon);
+//     break;
+//     case "right":
+//     fight(player, mouse);
+//     break;
+//     case "left":
+//     fight(player, troll);
+//     break;
+//     case "look":
+//     var look = prompt("You look around the room and see a club, a shield, a book, and a potion. Which do you pick up? club, shield, book, potion")
+//     switch (look) {
+//       case "club":
+//       player.damage = player.damage + 10
+//       console.log("You have gained 10 damage. Your damage is now " + player.damage)
+//       break;
+//       case "shield":
+//       player.armor = player.armor + 10
+//       console.log("You have gained 10 armor. Your armor is now " + player.armor)
+//       break;
+//       case "book":
+//       player.exp = player.exp + 2000
+//       console.log("You have gained 2000 exp. You experience is now " + player.exp)
+//       break;
+//       case "potion":
+//       player.health = 100 + (player.level * 20)
+//       console.log("You have restored your health to full.")
+//       break;
+//     }
+
+
+//   };
+
+// // Functions:
+// fight = function(player, enemy) {
+//   while (player.health > 0 && enemy.health > 0) {
+//     player.health = player.health - (enemy.damage - player.armor)
+//     console.log(enemy.name + " Attacks!")
+//     console.log("Your health is: " + player.health)
+//     enemy.health = enemy.health - (player.damage - enemy.armor)
+//     console.log("You Attack!")
+//     console.log(enemy.name+ "'s " + "health is " + enemy.health)
+//   };
+//   if (player.health < 0)
+//     console.log("You died!");
+//   else if (enemy.health <0)
+//     player.gold = player.gold + enemy.gold
+//   player.exp = player.exp + enemy.exp
+//   console.log(enemy.name + " has died!  You have gained " + enemy.gold + " gold pieces and " + enemy.exp + " experience.")
+//   if (enemy.exp >= 100){
+//     levelup(player)};
+//   };
+
+//   levelup = function(player) {
+//     player.level = player.level + 1
+//     player.damage = player.damage + 5
+//     player.health = player.health + (player.level * 20)
+//     console.log("You have gained a level! You are now level " + player.level + "!" + " Your health has expanded to " + player.health + " and your damage has increased to " + player.damage + ".")
+//   }
+
+
+
+//   look = function() {
+//     console.log("You look around the room and see a club, a shield, a book, and a health potion.")
+//   }
+
+//   stats = function(player) {
+//     console.log("Your current health is " + player.health)
+//     console.log("Your current damage is " + player.damage)
+//     console.log("Your current armor is " + player.armor)
+//     console.log("Your current level is " + player.level)
+//     console.log("Your current gold is " + player.gold)
+//     console.log("Your current experience is " + player.exp)
+//   }
+
+//   stats(player)
+// }
+
+// Refactored Code
+// Not much refactored code, it is in a very simple form
 var player = {
-  armed: false,
-  persuasion: false,
-  cloak: false,
-  torch: false,
-  gold: false,
-  boat: false,
-  success: false
-}
+  health: 100,
+  damage: 5,
+  armor: 5,
+  gold: 0,
+  exp: 0,
+  level: 1
+};
+
+var dragon = {
+  health: 125,
+  damage: 7,
+  armor: 2,
+  name: "Dragon",
+  gold: 2000,
+  exp: 100
+};
 
 var troll = {
-  defeated: false,
-  bribed: false,
-  persuaded: false,
-  tricked: false
+  health: 25,
+  damage: 10,
+  armor: 3,
+  name: "Troll",
+  gold: 500,
+  exp: 20
+};
+
+var mouse = {
+  health: 2,
+  damage: 1,
+  armor: 0,
+  name: "Mouse",
+  gold: 2,
+  exp: 2
 }
+while (player.health > 0){
+  var answer = prompt("You have made your way into the depths of the dungeon.  Around the room there are remains of other warriors who have fallen before you.  In front of you there is a large door with a Dragon inscribed in bronze shaped like a door knocker.  To the left of you there is a smaller door from which you can hear gentle hums and grunts.  To the right there is a an opening that you could perhaps squeeze through.  What do you decide to do? right, left, forward, look")
 
-var answer = prompt("You come across a nasty looking troll who is also quite gigantic.  He is roasting a bird over a fire on his bridge.  You must cross the bridge to get to your house, but the troll remains steadfast.  What do you do? (look, persuade)")
-
-switch(answer) {
+  switch (answer) {
+    case "forward":
+    fight(player, dragon);
+    break;
+    case "right":
+    fight(player, mouse);
+    break;
+    case "left":
+    fight(player, troll);
+    break;
     case "look":
-        text = "You see a club, a cloak, and a piece of shiny gold.";
-        item = prompt("You see a club, a cloak, and a brick of shiny gold. Which do you pick up?");
-        switch(item) {
-          case "cloak":
-            player.cloak = true;
-            action = prompt("How will you try to pass the troll now? (sneak, bribe, fight)")
-            if (action == "sneak") {
-              player.success = true;
-              troll.tricked = true;
-              console.log("You snuck past the sleeping troll in the dead of night covered by your stealthy cloak. You still hear the snores as you slip away towards your home.")}
+    var look = prompt("You look around the room and see a club, a shield, a book, and a potion. Which do you pick up? club, shield, book, potion")
+    switch (look) {
+      case "club":
+      player.damage = player.damage + 10
+      console.log("You have gained 10 damage. Your damage is now " + player.damage)
+      break;
+      case "shield":
+      player.armor = player.armor + 10
+      console.log("You have gained 10 armor. Your armor is now " + player.armor)
+      break;
+      case "book":
+      player.exp = player.exp + 2000
+      console.log("You have gained 2000 exp. You experience is now " + player.exp)
+      break;
+      case "potion":
+      player.health = 100 + (player.level * 20)
+      console.log("You have restored your health to full.")
+      break;
+    }
 
-            else {
-              console.log("The troll beats you to a pulp and the world forgets your name...")}
-              break;
-          case "club":
-            player.armed = true;
-            action = prompt("How will you try to pass the troll now? (sneak, bribe, fight)")
-            if (action == "fight") {
-              player.success = true;
-              troll.defeated = true;
-              console.log("You managed to incapacitate the troll, but not without sustaining multiple lacerations of your own.  Things are looking grim and you probably won't make it home...")}
 
-            else {
-              console.log("The troll beats you to a pulp and the world forgets your name...")}
-              break;
-          case "gold":
-            player.gold = true;
-            action = prompt("How will you try to pass the troll now? (sneak, bribe, fight)")
-            if (action == "bribe") {
-              player.success = true;
-              troll.bribed = true;
-              console.log("The troll thanks you for doing business with him and lets you pass.  You think about what you could have bought with that brick of gold at home... A mansion? With a two car garage? Oh well better to not think about such things....")}
+  };
 
-            else {
-              console.log("The troll beats you to a pulp and the world forgets your name...")}
-              break;
-        }
-        break;
-    case "persuade":
-          story = prompt("You realize that the troll does not converse very well and that he is a creature of few words.  He says 'money money' over and over again.  You wonder how you will ever persuade him to let you cross for free.  Then you decide that you will have to prove you are a good storyteller.  Will you tell a story about your grandma, one about dragon's gold, or a story of spirits? (grandma, gold, spirits)");
-        switch(story) {
-          case "grandma":
-            player.success = true;
-            troll.tricked = true;
-            console.log("You stand there for hours telling the most boring story you could think of.  The troll tries his best to listen to it, but finally cannot take it anymore and turns around, gently falling to sleep.  You sneak past while the troll snoozes...");
-            break;
-          case "gold":
-            console.log("The story of Dragon's gold gets the troll riled up.  With a glimmer in his eyes, he grabs you and demands you tell him where the gold is.  After a few minutes of your pleading, he realizes you know nothing, and throws you in the river.");
-            break;
-          case "spirits":
-            action = prompt("The troll becomes superstitious and paranoid, and asks you whether or not the spirits will punish him.  Yes or No?");
-            if (action == "Yes") {
-              player.success = true;
-              troll.persuaded = true;
-              console.log("The troll cowers and squeals, wondering if lightning will strike him down at any moment.  After you watch the troll lying in fetal position for a few minutes, you swiftly walk across the bridge to your home.")}
+// Functions:
+fight = function(player, enemy) {
+  while (player.health > 0 && enemy.health > 0) {
+    player.health = player.health - (enemy.damage - player.armor)
+    console.log(enemy.name + " Attacks!")
+    console.log("Your health is: " + player.health)
+    enemy.health = enemy.health - (player.damage - enemy.armor)
+    console.log("You Attack!")
+    console.log(enemy.name+ "'s " + "health is " + enemy.health)
+  };
+  if (player.health < 0)
+    console.log("You died!");
+  else if (enemy.health <0)
+    player.gold = player.gold + enemy.gold
+  player.exp = player.exp + enemy.exp
+  console.log(enemy.name + " has died!  You have gained " + enemy.gold + " gold pieces and " + enemy.exp + " experience.")
+  if (enemy.exp >= 100){
+    levelup(player)};
+  };
 
-            else {
-              console.log("The troll is no longer scared of the spirits and beats you to a pulp and the world forgets your name...")}
-              break;
-        }
-        break;
-}
-// Functions: Sneak, Think, Look, Train, Intimidate
-
-train = function(hours) {
-  if (hours >= 3){
-    player.armed = true;
-    troll.defeated = true;
-  }
-}
-
-think = function(hours) {
-  if (hours >= 3){
-    player.persuasion = true;
-    troll.persuaded = true;
-  }
-}
-
-look = function(hours) {
-  if (hours >= 3){
-    player.cloak = true;
-    player.gold = true;
-    player.armed = true;
-  }
-}
-
-sneak = function(hours) {
-  if (hours >= 3){
-    troll.tricked = true;
-  }
-}
-
-intimidate = function(hours) {
-  if (hours >= 3){
-    player.persuasion = true;
-    troll.persuaded = true;
-  }
-}
-
-cross = function() {
-  if (player.armed = true) {
-    console.log("You will be able to fight the troll due to your preparation.")
-  }
-  else if (player.persuasion = true) {
-    console.log("You will be able to persuade the troll due to your extended time of thought.")
+  levelup = function(player) {
+    player.level = player.level + 1
+    player.damage = player.damage + 5
+    player.health = player.health + (player.level * 20)
+    console.log("You have gained a level! You are now level " + player.level + "!" + " Your health has expanded to " + player.health + " and your damage has increased to " + player.damage + ".")
   }
 
+
+
+  look = function() {
+    console.log("You look around the room and see a club, a shield, a book, and a health potion.")
+  }
+
+  stats = function(player) {
+    console.log("Your current health is " + player.health)
+    console.log("Your current damage is " + player.damage)
+    console.log("Your current armor is " + player.armor)
+    console.log("Your current level is " + player.level)
+    console.log("Your current gold is " + player.gold)
+    console.log("Your current experience is " + player.exp)
+  }
+
+  stats(player)
 }
-
-train(2)
-intimidate(3)
-cross()
-// Refactored Code
-
 
 
 
 
 
 // Reflection
-//
-//
-//
-//
-//
-//
-//
-//
+/*
+What was the most difficult part of this challenge?
+The most difficult part of this challenge was coming up with the idea for the game, and also making sure everything worked together at the end (bug testing).  Since there is no command line prompt for javascript, this furthered the difficulty of running the program in node, and must be run through DevTools on Chrome.
+What did you learn about creating objects and functions that interact with one another?
+I learned that it is pretty simple to create objects and have functions that interact with them, yet coming up with formulas for exactly what you would like to happen is tougher.  Also, running a prompting game through javascript is very tough as there is no command line prompt, while in Ruby this is a simple function.
+Did you learn about any new built-in methods you could use in your refactored solution? If so, what were they and how do they work?
+I couldn't really think of any built-in methods to use as my game is very simple at heart, but I think if I had used a different type of framework perhaps I would be using more built-in methods.  There was no difficult math or mapping happening, so while loops and if/else statements and a switch case fit well.
+How can you access and manipulate properties of objects?
+You can access and manipulate properties of objects simply by using the object.property notation as long as you have defined your objects, and your functions are declarations.
+*/
