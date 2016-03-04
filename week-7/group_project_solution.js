@@ -28,3 +28,5 @@ Steps:
   3. If the amount of numbers in your array is not divisible by 2 with no remainder (x % 2 !== 0), or an odd number, then the median is the value at center index.
   4. If the amount of numbers in your array is divisible by 2 evenly (x % 2 == 0), then add the value at center index with the value at (center index -1) and divide them by two
   5. Return Median
+
+  */
