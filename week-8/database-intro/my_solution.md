@@ -21,4 +21,4 @@ Release 5:
 10. select region_name, state_name from states inner join regions on states.region_id=regions.id order by region_id;
 
 Release 6:
-![][]
+![](https://github.com/egumerlock/phase-0/blob/master/week-8/database-intro/schemadesign.png)
