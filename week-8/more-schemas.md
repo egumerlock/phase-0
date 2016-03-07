@@ -1,12 +1,12 @@
 Release 2:
 
-[]()
+[](https://github.com/egumerlock/phase-0/blob/master/week-8/imgs/one_to_one_schema.png)
 
 This is a one to one schema because for every row in the student table, there will be a row in the address table with the correpsonding information for that student.  In other words, for every instance of data (student) in the original table, there will be one instance of data (address) in the relational table.
 
 Release 4:
 
-[]()
+[](https://github.com/egumerlock/phase-0/blob/master/week-8/imgs/grocerylistschema.png)
 
 Items can belong to many grocery lists, and grocery lists can contain many items.  Many to many relationship.
 
